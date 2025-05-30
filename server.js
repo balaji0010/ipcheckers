@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = (...args)=> import('node-fetch').then(({default: fetch})=> fetch(...args));
-const app = express;
+const app = express();
 const port = 3001;
 
 app.set('trust proxy', true);
@@ -13,5 +13,5 @@ app.get('/', async(req,res)=>{
 });
 
 app.listen(port,()=>{
-    console.log(`Node.js running on http:localhost:${port}`);
+    console.log(`Node.js running on http://localhost:${port}`);
 });
